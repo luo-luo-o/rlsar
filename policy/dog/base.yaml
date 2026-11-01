@@ -1,0 +1,22 @@
+dog:
+  dt: 0.005
+  decimation: 10
+  num_of_dofs: 12
+  joint_names: [rotate_left_front_shoulder_joint, rotate_left_front_thigh_joint, rotate_left_front_shank_joint, rotate_left_after_shoulder_joint, rotate_left_after_thigh_joint, rotate_left_after_shank_joint, rotate_right_front_shoulder_joint, rotate_right_front_thigh_joint, rotate_right_front_shank_joint, rotate_right_after_shoulder_joint, rotate_right_after_thigh_joint, rotate_right_after_shank_joint]
+  joint_controller_names: [rotate_left_front_shoulder_controller, rotate_left_front_thigh_controller, rotate_left_front_shank_controller, rotate_left_after_shoulder_controller, rotate_left_after_thigh_controller, rotate_left_after_shank_controller, rotate_right_front_shoulder_controller, rotate_right_front_thigh_controller, rotate_right_front_shank_controller, rotate_right_after_shoulder_controller, rotate_right_after_thigh_controller, rotate_right_after_shank_controller]
+  joint_mapping: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  init_angle: [0.0, 0.0, 0.0, 0.0, 0.0, 0.018, 0.0, 0.0, 0.0, 0.0, 0.0, 0.057]
+  default_dof_pos: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  fixed_kp: [40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0]
+  fixed_kd: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  rl_kp: [40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0]
+  rl_kd: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  action_scale: [0.08, 0.10, 0.12, 0.08, 0.10, 0.12, 0.08, 0.10, 0.12, 0.08, 0.10, 0.12]
+  torque_limits: [2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2]
+  wheel_indices: []
+  lin_vel_scale: 1.0
+  ang_vel_scale: 1.0
+  dof_pos_scale: 1.0
+  dof_vel_scale: 1.0
+  commands_scale: [0.5, 0.5, 0.5]
+  foot_contact_topics: [/dog/contacts/left_front, /dog/contacts/left_after, /dog/contacts/right_front, /dog/contacts/right_after]
