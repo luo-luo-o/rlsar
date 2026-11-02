@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<robot name="Robotic_dog">
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/base_link.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.019782 -0.2317164 0.0093415" rpy="0 0 0" />
+      <mass value="0.0014068" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+
+  <link name="main_body_1">
+    <visual>
+      <origin xyz="0.019782 0.237433 -0.007342" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/main_body_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.019782 0.237433 -0.007342" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/main_body_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0.1820125 -0.0181781" rpy="0 0 0" />
+      <mass value="0.757692" />
+      <inertia ixx="0.012023" ixy="0" ixz="0" iyy="0.001511" iyz="0" izz="0.013198" />
+    </inertial>
+  </link>
+
+  <link name="left_front_shoulder_1">
+    <visual>
+      <origin xyz="0.114782 0.230433 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_front_shoulder_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.114782 0.230433 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_front_shoulder_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0107761 0.0280345 -0.0122881" rpy="0 0 0" />
+      <mass value="0.1065874" />
+      <inertia ixx="0.000045" ixy="0.000002" ixz="-0.000002" iyy="0.000045" iyz="0" izz="0.000039" />
+    </inertial>
+  </link>
+
+  <link name="left_front_thigh_1">
+    <visual>
+      <origin xyz="0.131492 0.213723 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_front_thigh_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.131492 0.213723 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_front_thigh_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0272695 -0.0600465 0.0000462" rpy="0 0 0" />
+      <mass value="0.068327" />
+      <inertia ixx="0.000117" ixy="0" ixz="0" iyy="0.000061" iyz="0" izz="0.000171" />
+    </inertial>
+  </link>
+
+  <link name="left_front_shank_1">
+    <visual>
+      <origin xyz="0.131492 0.333723 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_front_shank_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.027067 -0.056576 -0.02" rpy="-0.0159405 1.166513 1.5578845" />
+      <geometry>
+        <cylinder radius="0.013" length="0.1" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.026802 -0.109 -0.05026" rpy="-0.5075351 0 0" />
+      <geometry>
+        <cylinder radius="0.013" length="0.031493" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0267424 -0.0493228 -0.0196025" rpy="0 0 0" />
+      <mass value="0.1292148" />
+      <inertia ixx="0.000333" ixy="0" ixz="0" iyy="0.000091" iyz="-0.000127" izz="0.000267" />
+    </inertial>
+  </link>
+
+  <link name="left_front_foot_link">
+    <visual>
+      <origin xyz="0.026802 -0.121 -0.0715" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <cylinder radius="0.0122" length="0.021493" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision name="left_front_foot_collision">
+      <origin xyz="0.026802 -0.121 -0.069" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <sphere radius="0.0135" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.026802 -0.121 -0.0715" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+    </inertial>
+  </link>
+
+  <link name="left_after_shoulder_1">
+    <visual>
+      <origin xyz="0.114782 -0.119567 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_after_shoulder_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.114782 -0.119567 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_after_shoulder_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0107761 -0.0280341 -0.0122881" rpy="0 0 0" />
+      <mass value="0.1065874" />
+      <inertia ixx="0.000045" ixy="-0.000002" ixz="-0.000002" iyy="0.000045" iyz="0" izz="0.000039" />
+    </inertial>
+  </link>
+
+  <link name="left_after_thigh_1">
+    <visual>
+      <origin xyz="0.131492 -0.102857 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_after_thigh_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.131492 -0.102857 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_after_thigh_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0272695 -0.0600465 0.0000462" rpy="0 0 0" />
+      <mass value="0.068327" />
+      <inertia ixx="0.000117" ixy="0" ixz="0" iyy="0.000061" iyz="0" izz="0.000171" />
+    </inertial>
+  </link>
+
+  <link name="left_after_shank_1">
+    <visual>
+      <origin xyz="0.131492 0.017143 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/left_after_shank_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.027067 -0.056576 -0.02" rpy="-0.0159405 1.166513 1.5578845" />
+      <geometry>
+        <cylinder radius="0.013" length="0.1" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.026802 -0.109 -0.05026" rpy="-0.5075351 0 0" />
+      <geometry>
+        <cylinder radius="0.013" length="0.031493" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.0267424 -0.0493228 -0.0196025" rpy="0 0 0" />
+      <mass value="0.1292148" />
+      <inertia ixx="0.000333" ixy="0" ixz="0" iyy="0.000091" iyz="-0.000127" izz="0.000267" />
+    </inertial>
+  </link>
+
+  <link name="left_after_foot_link">
+    <visual>
+      <origin xyz="0.026802 -0.121 -0.0715" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <cylinder radius="0.0122" length="0.021493" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision name="left_after_foot_collision">
+      <origin xyz="0.026802 -0.121 -0.069" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <sphere radius="0.0135" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.026802 -0.121 -0.0715" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+    </inertial>
+  </link>
+
+  <link name="right_front_shoulder_1">
+    <visual>
+      <origin xyz="-0.075218 0.230433 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_front_shoulder_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.075218 0.230433 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_front_shoulder_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0107762 0.0280345 -0.0122881" rpy="0 0 0" />
+      <mass value="0.1065874" />
+      <inertia ixx="0.000045" ixy="-0.000002" ixz="0.000002" iyy="0.000045" iyz="0" izz="0.000039" />
+    </inertial>
+  </link>
+
+  <link name="right_front_thigh_1">
+    <visual>
+      <origin xyz="-0.091928 0.213723 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_front_thigh_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.091928 0.213723 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_front_thigh_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0272696 -0.0600465 0.0000462" rpy="0 0 0" />
+      <mass value="0.068327" />
+      <inertia ixx="0.000117" ixy="0" ixz="0" iyy="0.000061" iyz="0" izz="0.000171" />
+    </inertial>
+  </link>
+
+  <link name="right_front_shank_1">
+    <visual>
+      <origin xyz="-0.091928 0.333723 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_front_shank_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0275 -0.056576 -0.02" rpy="-0.0159405 1.166513 1.5578845" />
+      <geometry>
+        <cylinder radius="0.013" length="0.1" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0275 -0.109 -0.05026" rpy="-0.5075351 0 0" />
+      <geometry>
+        <cylinder radius="0.013" length="0.031493" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0267425 -0.0493228 -0.0196025" rpy="0 0 0" />
+      <mass value="0.1292148" />
+      <inertia ixx="0.000333" ixy="0" ixz="0" iyy="0.000091" iyz="-0.000127" izz="0.000267" />
+    </inertial>
+  </link>
+
+  <link name="right_front_foot_link">
+    <visual>
+      <origin xyz="-0.0275 -0.121 -0.0715" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <cylinder radius="0.0122" length="0.021493" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision name="right_front_foot_collision">
+      <origin xyz="-0.0275 -0.121 -0.069" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <sphere radius="0.0135" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0275 -0.121 -0.0715" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+    </inertial>
+  </link>
+
+  <link name="right_after_shoulder_1">
+    <visual>
+      <origin xyz="-0.075218 -0.119567 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_after_shoulder_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.075218 -0.119567 0.037158" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_after_shoulder_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0107762 -0.0280341 -0.0122881" rpy="0 0 0" />
+      <mass value="0.1065874" />
+      <inertia ixx="0.000045" ixy="0.000002" ixz="0.000002" iyy="0.000045" iyz="0" izz="0.000039" />
+    </inertial>
+  </link>
+
+  <link name="right_after_thigh_1">
+    <visual>
+      <origin xyz="-0.091928 -0.102857 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_after_thigh_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.091928 -0.102857 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_after_thigh_1.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0272696 0.0600469 -0.0000472" rpy="0 0 0" />
+      <mass value="0.068327" />
+      <inertia ixx="0.000117" ixy="0" ixz="0" iyy="0.000061" iyz="0" izz="0.000171" />
+    </inertial>
+  </link>
+
+  <link name="right_after_shank_1">
+    <visual>
+      <origin xyz="-0.091928 -0.222857 0.060248" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog_description/meshes/right_after_shank_1.stl" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0275 -0.056576 -0.02" rpy="-0.0159405 1.166513 1.5578845" />
+      <geometry>
+        <cylinder radius="0.013" length="0.1" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0275 -0.109 -0.05026" rpy="-0.5075351 0 0" />
+      <geometry>
+        <cylinder radius="0.013" length="0.031493" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0267425 -0.0493227 -0.0196025" rpy="0 0 0" />
+      <mass value="0.1292148" />
+      <inertia ixx="0.000333" ixy="0" ixz="0" iyy="0.000091" iyz="-0.000127" izz="0.000267" />
+    </inertial>
+  </link>
+
+  <link name="right_after_foot_link">
+    <visual>
+      <origin xyz="-0.0275 -0.121 -0.0715" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <cylinder radius="0.0122" length="0.021493" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.70000000 0.70000000 0.70000000 1.00000000"/>
+      </material>
+    </visual>
+    <collision name="right_after_foot_collision">
+      <origin xyz="-0.0275 -0.121 -0.069" rpy="-1.5707963 0 -1.5707963" />
+      <geometry>
+        <sphere radius="0.0135" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0275 -0.121 -0.0715" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+    </inertial>
+  </link>
+
+  <joint name="left_front_foot_joint" type="fixed" dont_collapse="true">
+    <parent link="left_front_shank_1" />
+    <child link="left_front_foot_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="left_after_foot_joint" type="fixed" dont_collapse="true">
+    <parent link="left_after_shank_1" />
+    <child link="left_after_foot_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="right_front_foot_joint" type="fixed" dont_collapse="true">
+    <parent link="right_front_shank_1" />
+    <child link="right_front_foot_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="right_after_foot_joint" type="fixed" dont_collapse="true">
+    <parent link="right_after_shank_1" />
+    <child link="right_after_foot_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="rigid_main_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="main_body_1" />
+    <origin xyz="-0.019782 -0.237433 0.007342" rpy="0 0 0" />
+  </joint>
+
+  <joint name="rotate_left_front_shoulder_joint" type="revolute">
+    <parent link="main_body_1" />
+    <child link="left_front_shoulder_1" />
+    <origin xyz="-0.095 0.007 -0.0445" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.3745329" upper="1" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_left_front_thigh_joint" type="revolute">
+    <parent link="left_front_shoulder_1" />
+    <child link="left_front_thigh_1" />
+    <origin xyz="-0.01671 0.01671 -0.02309" rpy="2.1 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-0.83" upper="1.7" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_left_front_shank_joint" type="revolute">
+    <parent link="left_front_thigh_1" />
+    <child link="left_front_shank_1" />
+    <origin xyz="0 -0.12 0" rpy="-2 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.9" upper="1.3962634" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_left_after_shoulder_joint" type="revolute">
+    <parent link="main_body_1" />
+    <child link="left_after_shoulder_1" />
+    <origin xyz="-0.095 0.357 -0.0445" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.274" upper="1" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_left_after_thigh_joint" type="revolute">
+    <parent link="left_after_shoulder_1" />
+    <child link="left_after_thigh_1" />
+    <origin xyz="-0.01671 -0.01671 -0.02309" rpy="2.4 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-0.49" upper="2" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_left_after_shank_joint" type="revolute">
+    <parent link="left_after_thigh_1" />
+    <child link="left_after_shank_1" />
+    <origin xyz="0 -0.12 0" rpy="-2.1 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.9" upper="1.3962634" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_right_front_shoulder_joint" type="revolute">
+    <parent link="main_body_1" />
+    <child link="right_front_shoulder_1" />
+    <origin xyz="0.095 0.007 -0.0445" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-0.1745329" upper="1" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_right_front_thigh_joint" type="revolute">
+    <parent link="right_front_shoulder_1" />
+    <child link="right_front_thigh_1" />
+    <origin xyz="0.01671 0.01671 -0.02309" rpy="2.1 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-0.69" upper="1.5" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_right_front_shank_joint" type="revolute">
+    <parent link="right_front_thigh_1" />
+    <child link="right_front_shank_1" />
+    <origin xyz="0 -0.12 0" rpy="-2 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1" upper="1.3962634" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_right_after_shoulder_joint" type="revolute">
+    <parent link="main_body_1" />
+    <child link="right_after_shoulder_1" />
+    <origin xyz="0.095 0.357 -0.0445" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-0.3" upper="1" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_right_after_thigh_joint" type="revolute">
+    <parent link="right_after_shoulder_1" />
+    <child link="right_after_thigh_1" />
+    <origin xyz="0.01671 -0.01671 -0.02309" rpy="-0.7 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-0.45" upper="2" effort="2.5" velocity="5" />
+  </joint>
+
+  <joint name="rotate_right_after_shank_joint" type="revolute">
+    <parent link="right_after_thigh_1" />
+    <child link="right_after_shank_1" />
+    <origin xyz="0 0.12 0" rpy="1 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.9" upper="1.3962634" effort="2.5" velocity="5" />
+  </joint>
+
+</robot>

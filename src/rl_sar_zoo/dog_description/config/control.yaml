@@ -1,0 +1,3 @@
+dog:
+  gazebo_ros_control:
+    pid_gains: {rotate_left_front_shoulder_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_left_front_thigh_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_left_front_shank_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_left_after_shoulder_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_left_after_thigh_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_left_after_shank_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_right_front_shoulder_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_right_front_thigh_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_right_front_shank_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_right_after_shoulder_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_right_after_thigh_joint: {p: 40.0, i: 0.0, d: 1.0}, rotate_right_after_shank_joint: {p: 40.0, i: 0.0, d: 1.0}}

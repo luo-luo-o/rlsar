@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware><plugin>gazebo_ros2_control/GazeboSystem</plugin></hardware>
+    <xacro:macro name="effort_joint" params="name">
+      <joint name="${name}">
+        <command_interface name="effort"><param name="min">-2.2</param><param name="max">2.2</param></command_interface>
+        <state_interface name="position"/><state_interface name="velocity"/><state_interface name="effort"/>
+      </joint>
+    </xacro:macro>
+    <xacro:effort_joint name="rotate_left_front_shoulder_joint"/>
+    <xacro:effort_joint name="rotate_left_front_thigh_joint"/>
+    <xacro:effort_joint name="rotate_left_front_shank_joint"/>
+    <xacro:effort_joint name="rotate_left_after_shoulder_joint"/>
+    <xacro:effort_joint name="rotate_left_after_thigh_joint"/>
+    <xacro:effort_joint name="rotate_left_after_shank_joint"/>
+    <xacro:effort_joint name="rotate_right_front_shoulder_joint"/>
+    <xacro:effort_joint name="rotate_right_front_thigh_joint"/>
+    <xacro:effort_joint name="rotate_right_front_shank_joint"/>
+    <xacro:effort_joint name="rotate_right_after_shoulder_joint"/>
+    <xacro:effort_joint name="rotate_right_after_thigh_joint"/>
+    <xacro:effort_joint name="rotate_right_after_shank_joint"/>
+  </ros2_control>
+  <gazebo><plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so"><parameters>$(find dog_description)/config/robot_control_ros2.yaml</parameters></plugin></gazebo>
+  <gazebo><plugin name="dog_set_model_configuration" filename="libdog_set_model_configuration.so"/></gazebo>
+  <gazebo>
+    <plugin name="dog_base_state" filename="libgazebo_ros_p3d.so">
+      <ros>
+        <remapping>odom:=/dog/base_state</remapping>
+      </ros>
+      <body_name>base_link</body_name>
+      <update_rate>200</update_rate>
+      <gaussian_noise>0.0</gaussian_noise>
+    </plugin>
+  </gazebo>
+  <xacro:macro name="contact_sensor" params="link topic collision">
+    <gazebo reference="${link}">
+      <sensor name="${link}_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>200</update_rate>
+        <contact><collision>${collision}</collision></contact>
+        <plugin name="${link}_contact_plugin" filename="libgazebo_ros_bumper.so">
+          <ros><remapping>bumper_states:=${topic}</remapping></ros>
+          <frame_name>${link}</frame_name>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+  <xacro:contact_sensor link="left_front_shank_1" topic="/dog/contacts/left_front"
+                        collision="left_front_shank_1_fixed_joint_lump__left_front_foot_collision_collision_2"/>
+  <xacro:contact_sensor link="left_after_shank_1" topic="/dog/contacts/left_after"
+                        collision="left_after_shank_1_fixed_joint_lump__left_after_foot_collision_collision_2"/>
+  <xacro:contact_sensor link="right_front_shank_1" topic="/dog/contacts/right_front"
+                        collision="right_front_shank_1_fixed_joint_lump__right_front_foot_collision_collision_2"/>
+  <xacro:contact_sensor link="right_after_shank_1" topic="/dog/contacts/right_after"
+                        collision="right_after_shank_1_fixed_joint_lump__right_after_foot_collision_collision_2"/>
+</robot>
